@@ -1,0 +1,7 @@
+/.bundle
+/vendor/bundle
+
+#環境変数の管理
+.env
+
+.byebug_history
