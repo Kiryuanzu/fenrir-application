@@ -1,0 +1,17 @@
+<div class="rest-list">
+<% @rest_list.each do |rest| %>
+  <article class="rest-information">
+    <span><%= rest[:name] %></span><br>
+    <span><%= rest[:url] %></span><br>
+    <% if rest[:image_url][:shop_image1] %>
+      <img src="<%= rest[:image_url][:shop_image1] %>"></img><br>
+    <% end %>
+    <form action="show" method="get">
+      <input type="hidden" value="<%= rest[:id] %>" name="rest_id">
+      <input type="submit" value="お店の詳細ページ"><br>
+    </form>
+  </article> 
+<% end %>
+</div>
+
+<%= paginate @rest_list %>

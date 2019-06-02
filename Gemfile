@@ -8,3 +8,6 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'byebug'
 gem 'dotenv'
+gem 'kaminari-sinatra'
+gem "padrino-helpers"
+gem 'activesupport'

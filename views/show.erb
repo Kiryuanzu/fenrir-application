@@ -1,0 +1,35 @@
+<head>
+  <script src="http://maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&language=ja"></script>
+  <link rel="stylesheet" type="text/css" href="/css/show.css" />
+</head>
+<article class="rest-show">
+    <span><%= @rest[:name] %></span><br>
+    <span><%= @rest[:url] %></span><br>
+    <span><%= @rest[:tel] %></span><br>
+    <span><%= @rest[:opentime] %></span><br>
+    <% if @rest[:image_url][:shop_image1] %>
+      <img src="<%= @rest[:image_url][:shop_image1] %>"></img><br>
+    <% end %>
+    <span><%= @rest[:address] %></span>
+</article>
+<div id="map-canvas"></div>
+
+<script type="text/javascript">
+  var lat = <%= @rest[:latitude] %>;
+  var lng = <%= @rest[:longitude] %>;
+  var mapLatLng = new google.maps.LatLng(lat,lng) ;
+  var mapOptions = {
+        zoom : 15,          // 拡大倍率
+        center : mapLatLng  // 緯度・経度
+      };
+      // マップオブジェクト作成
+      var map = new google.maps.Map(
+        document.getElementById("map-canvas"), // マップを表示する要素
+        mapOptions         // マップオプション
+      );
+      //　マップにマーカーを表示する
+      var marker = new google.maps.Marker({
+        map : map,             // 対象の地図オブジェクト
+        position : mapLatLng   // 緯度・経度
+      });
+</script>
