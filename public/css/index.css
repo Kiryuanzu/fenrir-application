@@ -1,4 +1,24 @@
+
+.home {
+  border: 1px solid;
+  max-width: 640px;
+  margin: auto; 
+  padding: 15px;
+  padding-left: 45px; 
+}
+.home-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Rounded Mplus 1c';
+}
+
 #map-canvas {
-  width: 600px;
-  height: 400px;
+  width: 50%;
+  height: 50%;
+}
+
+.search-button {
+  margin: 15px;
+  font-size: 1.3em;
 }

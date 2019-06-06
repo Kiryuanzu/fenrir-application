@@ -1,17 +1,26 @@
+<head>
+   <script src="http://maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&language=ja"></script>
+  <link rel="stylesheet" type="text/css" href="/css/show.css" />
+</head>
 <div class="rest-list">
+  <div id="map-canvas"></div>
+  <span class="search-result">以上の現在地からの検索結果</span>
 <% @rest_list.each do |rest| %>
   <article class="rest-information">
-    <span><%= rest[:name] %></span><br>
-    <span><%= rest[:url] %></span><br>
+    <span class="rest-name"><%= rest[:name] %></span><br>
     <% if rest[:image_url][:shop_image1] %>
       <img src="<%= rest[:image_url][:shop_image1] %>"></img><br>
     <% end %>
-    <form action="show" method="get">
+    <a href="<%= rest[:url] %>">店舗紹介リンク(ぐるナビのページに飛ぶ)</a><br>
+    <form action="show" method="get" class="show-button">
       <input type="hidden" value="<%= rest[:id] %>" name="rest_id">
-      <input type="submit" value="お店の詳細ページ"><br>
+      <button type="submit" class="show-button">お店の詳細ページ</button><br>
     </form>
   </article> 
 <% end %>
-</div>
 
 <%= paginate @rest_list %>
+
+</div>
+
+<script type="text/javascript" src="/js/search.js"></script>

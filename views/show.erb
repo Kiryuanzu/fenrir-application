@@ -3,16 +3,19 @@
   <link rel="stylesheet" type="text/css" href="/css/show.css" />
 </head>
 <article class="rest-show">
-    <span><%= @rest[:name] %></span><br>
-    <span><%= @rest[:url] %></span><br>
-    <span><%= @rest[:tel] %></span><br>
-    <span><%= @rest[:opentime] %></span><br>
+    <span class="rest-name"><%= @rest[:name] %></span><br>
+    <span><a href="<%= @rest[:url] %>">店舗紹介リンク(ぐるナビのページに飛ぶ)</a><br>
+    <span>電話番号: <%= @rest[:tel] %></span><br>
+    <span>営業時間: <%= @rest[:opentime] %></span><br>
     <% if @rest[:image_url][:shop_image1] %>
+    <p>写真情報</p>
       <img src="<%= @rest[:image_url][:shop_image1] %>"></img><br>
     <% end %>
+    <p>地図情報</p>
     <span><%= @rest[:address] %></span>
+    <div id="map-canvas"></div>
 </article>
-<div id="map-canvas"></div>
+
 
 <script type="text/javascript">
   var lat = <%= @rest[:latitude] %>;

@@ -1,4 +1,39 @@
 #map-canvas {
-  width: 600px;
-  height: 400px;
+  width: 50%;
+  height: 50%;
+}
+
+.show-button {
+  font-size: 1em;
+}
+
+.rest-name {
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-bottom: 15px;
+}
+
+.rest-list {
+  border: 1px solid;
+  max-width: 640px;
+  margin: auto; 
+  padding: 15px;
+  padding-left: 45px; 
+}
+
+.search-result{
+  font-size: 1.2em;
+  padding-top: 15px;
+}
+
+.rest-information {
+  margin-top: 15px;
+}
+
+.rest-show {
+  border: 1px solid;
+  max-width: 640px;
+  margin: auto; 
+  padding: 15px;
+  padding-left: 45px; 
 }

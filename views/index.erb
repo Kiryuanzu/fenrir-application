@@ -2,20 +2,26 @@
   <script src="http://maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&language=ja"></script>
   <link rel="stylesheet" type="text/css" href="/css/index.css" />
 </head>
-<form action="search" method="get">
-  <input type="hidden" name="present_latitude" id="latitude" ><br>
-  <input type="hidden" name="present_longitude" id="longitude"><br>
-  <span>現在地からの検索半径</span>
-  <select name="range">
-    <option value="1">300m</option>
-    <option value="2">500m</option>
-    <option value="3">1000m</option>
-    <option value="4">2000m</option>
-    <option value="5">3000m</option>
-  </select>
-  <input type="submit" value="現在位置から調べる">
-</form>
-<div id="result"></div>
-<div id="map-canvas"></div>
+<body>
+  <article class="home-area">
+    <div class="home">
+      <span class="home-title">現在位置からレストランを探せるサービス</span>
+      <form action="search" method="get">
+        <input type="hidden" name="present_latitude" id="latitude" ><br>
+        <input type="hidden" name="present_longitude" id="longitude"><br>
+        <span>現在地からの検索半径: </span>
+        <select name="range">
+          <option value="1">300m</option>
+          <option value="2">500m</option>
+          <option value="3">1000m</option>
+          <option value="4">2000m</option>
+          <option value="5">3000m</option>
+        </select>
+        <button type="submit" class="search-button">検索する</button>
+      </form>
+      <div id="map-canvas"></div>
+    </div>
+  </article>
+</body>
 
 <script type="text/javascript" src="/js/index.js"></script>

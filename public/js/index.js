@@ -25,7 +25,6 @@ if( navigator.geolocation )
       document.getElementById("latitude").value = lat;
       document.getElementById("longitude").value = lng;
 
-      document.getElementById( 'result' ).innerHTML = '<dl><dt>緯度</dt><dd>' + lat + '</dd><dt>経度</dt><dd>' + lng + '</dd><dt>高度</dt><dd>' + alt + '</dd><dt>緯度、経度の精度</dt><dd>' + accLatlng + '</dd><dt>高度の精度</dt><dd>' + accAlt + '</dd><dt>方角</dt><dd>' + heading + '</dd><dt>速度</dt><dd>' + speed + '</dd></dl>' ;
 
       var mapLatLng = new google.maps.LatLng(lat,lng) ;
       var mapOptions = {
